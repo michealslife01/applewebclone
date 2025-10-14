@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <header className='fixed top-0 left-0 w-full z-50'>
         <nav className='flex items-center justify-between px-10 py-4'>
-            <img src='/logo.svg' alt="logo" className='w-10 h-10' />
+            <img src='/logo.svg' alt="logo" className='w-7 h-7' />
             <ul className='flex items-center gap-4'>
                 {navLinks.map(({label, href}) => (
                     <li key={label}>
