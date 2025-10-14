@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { navLinks } from '../constants'
 
 
@@ -24,6 +24,8 @@ const Navbar = () => {
             </button>
             </div>
         </nav>
+
+
     </header>
   )
 }
