@@ -1,17 +1,21 @@
 import { useRef } from 'react'
-import useMacStore from '../store'
-import clsx from 'clsx'
-import { Canvas } from '@react-three/fiber'
-import { Box, OrbitControls } from '@react-three/drei'
+import useMacStore from '../store';
+import clsx from 'clsx';
+import { Canvas } from '@react-three/fiber';
+import { Box, OrbitControls } from '@react-three/drei';
 // @ts-ignore
-import MacbookModel14 from './models/Macbook-14'
+import MacbookModel14 from './models/Macbook-14';
 // @ts-ignore
-import MacbookModel16 from './models/Macbook-16'
-import StudioLight from './studioLight'
+import MacbookModel16 from './models/Macbook-16';
+import StudioLight from './three/studioLight';
+import ModelSwitcher from './three/ModelSwitcher';
+import { useMediaQuery } from 'react-responsive';
 
 const ProductViewer = () => {
     //@ts-ignore
     const {color, size, scale, setColor, setSize, setScale, reset} = useMacStore();
+
+    const isMobile = useMediaQuery({query: '(max-width:1024px)'})
 
   return (
     <section id='product-viewer'>
@@ -31,13 +35,9 @@ const ProductViewer = () => {
                 </div>
             </div>
         </div>
-
-        <p className=' text-white text-4xl'>Render Canvas</p>
        <Canvas id='canvas' camera={{ position:[0 , 2, 5], fov: 50, near: 0.1, far: 100}} >
         <StudioLight />
-        <MacbookModel14 position={[0,0, 0]} scale = {0.06}/>
-       
-        <OrbitControls enableZoom={false} />
+        <ModelSwitcher scale={isMobile ? scale - 0.04 : scale} isMobile={isMobile} />
        </Canvas>
     </section>
   )
