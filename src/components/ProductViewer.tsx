@@ -1,8 +1,7 @@
-import { useRef } from 'react'
 import useMacStore from '../store';
 import clsx from 'clsx';
 import { Canvas } from '@react-three/fiber';
-import { Box, OrbitControls } from '@react-three/drei';
+
 // @ts-ignore
 import MacbookModel14 from './models/Macbook-14';
 // @ts-ignore
