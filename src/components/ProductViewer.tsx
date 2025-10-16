@@ -1,11 +1,6 @@
 import useMacStore from '../store';
 import clsx from 'clsx';
 import { Canvas } from '@react-three/fiber';
-
-// @ts-ignore
-import MacbookModel14 from './models/Macbook-14';
-// @ts-ignore
-import MacbookModel16 from './models/Macbook-16';
 import StudioLight from './three/studioLight';
 import ModelSwitcher from './three/ModelSwitcher';
 import { useMediaQuery } from 'react-responsive';
@@ -21,11 +16,9 @@ const ProductViewer = () => {
         <h2>Take a closer look</h2>
 
         <div className='controls'>
-            <p className='text-2xl font-bold'>MacBookPro {scale === 0.06 ? '14"' : '16"'} in {color === '#adb5bd' ? 'Silver' : 'Space Black'}</p>
-
             <div className='flex items-center gap-2'>
                 <div className='color-control'>
-                    <div className={clsx ('bg-neutral-300', color==='#adb5bd' && 'active')} onClick={()=> setColor('#adb5bd')} />
+                    <div className={clsx ('bg-neutral-300', color==='#c0c0c0' && 'active')} onClick={()=> setColor('#c0c0c0')} />
                     <div className={clsx ('bg-neutral-900', color==='#2e2c2e' && 'active')} onClick={()=> setColor('#2e2c2e')} />
                 </div>
                 <div className='size-control' >
@@ -36,7 +29,7 @@ const ProductViewer = () => {
         </div>
        <Canvas id='canvas' camera={{ position:[0 , 2, 5], fov: 50, near: 0.1, far: 100}} >
         <StudioLight />
-        <ModelSwitcher scale={isMobile ? scale - 0.04 : scale} isMobile={isMobile} />
+        <ModelSwitcher scale={scale} isMobile={isMobile} />
        </Canvas>
     </section>
   )

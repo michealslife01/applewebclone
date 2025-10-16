@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
-
-const hero = () => {
+const Hero = () => {
 
     const videoRef = useRef<HTMLVideoElement>(null)
 
@@ -24,4 +23,4 @@ const hero = () => {
   )
 }
 
-export default hero
+export default Hero
