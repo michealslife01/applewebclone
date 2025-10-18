@@ -423,7 +423,7 @@ body {
       @apply flex flex-col lg:flex-row lg:items-center justify-between max-lg:mt-5 gap-5 text-sm;
 
       ul {
-        @apply lg:divide-x flex flex-col lg:flex-row gap-2.5;
+        @apply lg:divide-x flex flex-col lg:flex-row gap-2.5 text-gray-400;
 
         li {
           @apply lg:px-5 cursor-pointer hover:text-primary transition-all duration-300 ease-in-out;
