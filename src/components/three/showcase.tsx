@@ -27,7 +27,7 @@ const Showcase = () => {
   return (
     <section id='showcase'>
        <div className="media">
-        <video src="/videos/game.mp4"  muted  playsInline loop />
+        <video src="/videos/game.mp4"  autoPlay  muted  playsInline loop />
         <div className="mask">
         <img src="/mask-logo.svg" alt="Mask logo" />
         </div>
