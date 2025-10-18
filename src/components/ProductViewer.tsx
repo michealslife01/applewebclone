@@ -5,6 +5,7 @@ import StudioLight from './three/studioLight';
 import ModelSwitcher from './three/ModelSwitcher';
 import { useMediaQuery } from 'react-responsive';
 
+
 const ProductViewer = () => {
     //@ts-ignore
     const {color, size, scale, setColor, setSize, setScale, reset} = useMacStore();
