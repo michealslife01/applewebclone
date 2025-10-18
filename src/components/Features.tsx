@@ -5,11 +5,10 @@ import MacbookModel from "./models/Macbook";
 import StudioLight from "./three/studioLight";
 import { features, featureSequence } from "../constants";
 import clsx from "clsx";
-import { Suspense, useRef } from "react";
+import { Suspense, useRef, useEffect } from "react";
 import * as THREE from "three";
 import { Html } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
-import { useEffect } from "react";
 import useMacStore from "../store";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -20,6 +19,7 @@ const ModelScroll = () => {
     const {setTexture} = useMacStore();
 
     useEffect(() => {
+        const videos: HTMLVideoElement[] = [];
 
         featureSequence.forEach((feature) => {
             const video = document.createElement('video');
@@ -30,8 +30,16 @@ const ModelScroll = () => {
                 preload: 'auto',
                 crossOrigin: 'anonymous',
             });
-            video.load();
+            videos.push(video);
         })
+
+        return () => {
+            videos.forEach(video => {
+                video.pause();
+                video.src = '';
+                video.load();
+            });
+        }
     }, []);
 
 

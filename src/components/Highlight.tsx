@@ -12,9 +12,6 @@ useGSAP(()=> {
         scrollTrigger: {
             trigger: '#highlights',
             start: isMobile ? 'bottom bottom' : 'top top',
-            end: 'bottom top',
-            scrub: 1,
-            markers: true,
         },
         y: 0,
         opacity: 1,
