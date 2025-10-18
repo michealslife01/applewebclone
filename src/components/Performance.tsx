@@ -51,12 +51,15 @@ const Performance = () => {
 
                 const selector = `.${item.id}`;
                 const vars = {};
-
+                // @ts-ignore
                 if (typeof item.left === "number") vars.left = `${item.left}%`;
+                // @ts-ignore
                 if (typeof item.right === "number") vars.right = `${item.right}%`;
+                // @ts-ignore
                 if (typeof item.bottom === "number") vars.bottom = `${item.bottom}%`;
-
+                // @ts-ignore
                 if (item.transform) vars.transform = item.transform;
+                // @ts-ignore
 
                 tl.to(selector, vars, 0);
             });

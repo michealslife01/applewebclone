@@ -16,7 +16,7 @@ import gsap from "gsap";
 const ModelScroll = () => {
     const groupRef = useRef<THREE.Group>(null);
     const isMobile = useMediaQuery({query: '( max-width: 1024px )'});
-    const {setTexture} = useMacStore();
+    const setTexture = useMacStore((state: any) => state.setTexture);
 
     useEffect(() => {
         const videos: HTMLVideoElement[] = [];
