@@ -2,6 +2,10 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## 📚 Documentation
+
+- **[GSAP Animation Documentation](./GSAP_DOCUMENTATION.md)** - Detailed guide on how GSAP animations work in the Performance and Showcase sections
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
